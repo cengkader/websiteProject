@@ -1,0 +1,186 @@
+/*Form Başlangıç*/
+.form-genel {
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #059669;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #057b55;
+}
+
+.contact-form .location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.contact-form .location a {
+    text-decoration: none;
+    color: black;
+}
+
+.contact-form .location a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.icon {
+    padding-right: 20px;
+}
+
+@media (min-width:768px) {
+    .sağ-from {
+        position: relative;
+        margin: 0;
+        margin-bottom: 20px;
+        height: 580px;
+        display: grid;
+        justify-content: center;
+        /* Yatayda ortalama */
+        align-items: center;
+        /* Dikeyde ortalama */
+        text-align: center;
+    }
+
+    .sağ-from::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        background: url('../img/pencil.png') no-repeat center center;
+        background-size: cover;
+        /* Resmin tam olarak alanı kaplamasını sağlar */
+        opacity: 0.1;
+        z-index: -1;
+        /* Arka planın yazıların arkasında kalmasını sağlar */
+    }
+
+    .sağ-from>* {
+        position: relative;
+        z-index: 1;
+        /* Yazıların arka planın önünde olmasını sağlar */
+    }
+
+    .sol-from {
+        margin: 0;
+        margin-left: 280px;
+        margin-bottom: 20px;
+        height: 580px;
+    }
+}
+
+@media (max-width:768px) {
+    .contact-form .location {
+        font-size: 20px;
+    }
+
+    .sağ-from {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        display: grid;
+        justify-content: center;
+        /* Yatayda ortalama */
+        align-items: center;
+        /* Dikeyde ortalama */
+        text-align: center;
+    }
+
+    .sağ-from::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 25%;
+        width: 50%;
+        height: 70%;
+        background: url('../img/pencil.png') no-repeat center center;
+        background-size: cover;
+        /* Resmin tam olarak alanı kaplamasını sağlar */
+        opacity: 0.1;
+        z-index: -1;
+        /* Arka planın yazıların arkasında kalmasını sağlar */
+    }
+
+    .sağ-from>* {
+        position: relative;
+        z-index: 1;
+        /* Yazıların arka planın önünde olmasını sağlar */
+    }
+
+    .sağ-from {
+        margin: 20px;
+    }
+
+    .sol-from {
+        margin: 20px;
+    }
+}
+
+
+/* Logoları yatay sırala ve aralarına boşluk ver */
+.logolar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* Logo boyutları */
+.logolar-img {
+    height: 50px;
+}
+
+@media (max-width:768px) {
+    .logolar img {
+        height: 50px;
+    }
+}
+
+
+/*Form Bitiş*/

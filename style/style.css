@@ -1,0 +1,438 @@
+/* Genel Sayfa Yapısı */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #092436;
+}
+
+/* Navbar Başlangıç */
+nav.appNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #d7d7d7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.05);
+}
+
+/* Logo */
+nav.appNav a.logo {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #092436;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav.appNav a.logo i {
+    font-size: 1.8rem;
+    color: #059669;
+}
+
+/* Menü listesi yatay */
+ul.navList {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+ul.navList li {
+    position: relative;
+    list-style: none;
+}
+
+ul.navList li a {
+    color: #092436;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+}
+
+ul.navList li a:hover {
+    background-color: #059669;
+    color: white;
+}
+
+/* Dropdown ok işareti */
+.dropdown>a .dropdown-arrow {
+    font-size: 0.8rem;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown menü */
+ul.navList li.dropdown:hover>ul.dropdownContent,
+ul.navList li.dropdown.open>ul.dropdownContent {
+    display: block;
+}
+
+ul.dropdownContent {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0%;
+    background-color: white;
+    max-width: 120px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 0.15);
+    border-radius: 4px;
+    padding: 2px 0;
+    z-index: 500;
+}
+
+ul.dropdownContent li a {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #092436;
+    display: block;
+    border-left: 4px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+ul.dropdownContent li a:hover {
+    background-color: #efefef;
+    color: black;
+    border-left-color: #047857;
+}
+
+/* Hamburger (mobilde görünür) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #092436;
+    user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    ul.navList {
+        position: fixed;
+        top: 58px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+
+    ul.navList.active {
+        max-height: 400px;
+    }
+
+    ul.navList li {
+        border-bottom: 1px solid #eee;
+    }
+
+    ul.navList li a {
+        padding: 14px 20px;
+        font-size: 18px;
+    }
+
+    ul.dropdownContent {
+        position: static;
+        box-shadow: none;
+        padding-left: 15px;
+    }
+
+    ul.dropdownContent li a {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-left: none;
+        text-align: left;
+    }
+
+    ul.navList li.dropdown>a .dropdown-arrow {
+        margin-left: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Navbar Bitiş */
+
+.footer {
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 10px 0px;
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-name h2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #092436;
+}
+
+.footer-social-media{
+    font-size: 30px;
+    margin: 10px;
+}
+
+.footer-icon{
+    color: #092436;
+    padding: 5px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #092436;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.footer-link:hover {
+    color: #047857;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-legal-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+}
+
+.footer-legal-link:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;         
+        justify-content: flex-start; 
+        gap: 10px;                  
+        padding: 5px 0;            
+    }
+
+    .footer-link {
+        font-size: 20px;
+        text-align: center;
+        padding: 6px 12px;
+    }
+}
+
+.footer-name {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.footer-name h2 {
+    font-size: 27px;
+}
+/*Footer Bitiş*/
+
+.container-section{
+    margin-left: 20px;
+    margin-left:20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/**/
+.home-genel {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.home-sol {
+  flex: 1 1 500px;
+  padding: 20px;
+}
+
+.home-sol h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.home-sol p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0077ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #005ecc;
+}
+
+.home-sag {
+  flex: 1 1 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+.home-sag img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .home-genel {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-sol,
+  .home-sag {
+    flex: 1 1 100%;
+  }
+
+  .home-sol h2 {
+    font-size: 2rem;
+  }
+
+  .home-sol p {
+    font-size: 1rem;
+  }
+}
+
+.intro-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.intro-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.intro-container h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro-container p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.skill-card {
+  background-color: #f2f7ff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  background-color: #e0ecff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .intro-container p {
+    font-size: 1rem;
+  }
+
+  .skill-card {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}
+
